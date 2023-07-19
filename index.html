@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="style.css">
+  <title>Monitoring</title>
+</head>
+<body id="home">
+  <section id="gallery">
+    <div class="container">
+      <div class="row text-center mb-3">
+        <div class="col">
+          <h2>MONITORING SYSTEM</h2>
+          <div class="large-timestamp" id="largeTimestamp"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="chart-container">
+              <div class="chart-timestamp" id="chartAsapTimestamp"></div>
+              <canvas id="chartAsap"></canvas>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="chart-container">
+              <div class="chart-timestamp" id="chartAirTimestamp"></div>
+              <canvas id="chartAir"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <button id="modeButton" class="mode-button">🌙</button>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"> </script>
+</body>
+</html>

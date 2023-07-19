@@ -1,0 +1,93 @@
+section {
+  padding-top: 4rem;
+}
+
+.gallery-img {
+  width: 100%;
+}
+
+#gallery .row > * {
+  padding: 0;
+}
+
+.chart-container {
+  position: relative;
+  height: 400px;
+}
+
+.chart-timestamp {
+  position: absolute;
+  top: -25px;
+  right: 10px;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.large-timestamp {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.chart-container {
+  margin-bottom: 80px;
+}
+
+/* Gaya untuk mode gelap */
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.mode-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.mode-button.dark-mode {
+  background-color: #fff;
+  color: #333;
+}
+
+.dark-mode .chart-timestamp {
+  color: white;
+  background-color: #333333;
+}
+
+/* Additional styles for mobile devices */
+@media (max-width: 576px) {
+  #largeTimestamp {
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 20px;
+    margin-left: 0;
+    position: fixed;
+    top: 0;
+    left: 20px;
+    z-index: 999;
+  }
+
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 900;
+  }
+}
