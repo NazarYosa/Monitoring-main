@@ -69,6 +69,7 @@ const chartAir = new Chart(ctxAir, {
 });
 
 // Fungsi untuk memformat timestamp menjadi jam:menit:detik
+// Ini adalah fungsi yang mengambil timestamp (waktu) dan mengembalikan string yang diformat dalam format jam:menit:detik.
 function formatTimestamp(timestamp) {
   const date = new Date(timestamp);
   const hours = date.getHours().toString().padStart(2, '0');
@@ -78,6 +79,7 @@ function formatTimestamp(timestamp) {
 }
 
 // Fungsi untuk memperbarui waktu secara real-time
+// Fungsi ini berjalan setiap detik dan mengambil waktu saat ini dari objek Date dan memformatnya ke dalam format jam:menit:detik. Hasilnya ditempatkan pada elemen HTML dengan ID 'largeTimestamp'.
 function updateClock() {
   const currentTime = new Date();
   const currentHours = currentTime.getHours().toString().padStart(2, '0');
@@ -90,7 +92,7 @@ function updateClock() {
 
 // Fungsi untuk mengambil data dari Thingspeak
 function getData() {
-  fetch('https://api.thingspeak.com/channels/2220709/feeds.json?results=10')
+  fetch('https://api.thingspeak.com/channels/2220709/feeds.json?results=10') // data yg diambil adlh 10 entri terakhir dari thingspeak
     .then((response) => response.json())
     .then((data) => {
       // Memperbarui tampilan dengan data terbaru
@@ -100,6 +102,7 @@ function getData() {
 }
 
 // Fungsi untuk memperbarui tampilan dengan data terbaru
+// Data asap dan air diperoleh dari objek data dan kemudian dimasukkan ke dalam array yang akan digunakan sebagai data untuk grafik. Grafik untuk tingkat asap dan air kemudian diperbarui dengan data terbaru menggunakan metode update() dari objek Chart.js.
 function updateUI(data) {
   const asapFeeds = data.feeds.filter((feed) => feed.field1 !== null);
   const airFeeds = data.feeds.filter((feed) => feed.field2 !== null);
